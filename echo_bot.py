@@ -19,7 +19,7 @@ def split_long_message(message, max_length):
             current_part = line  # Bắt đầu một phần mới
 
     parts.append(current_part)  # Lưu phần cuối cùng vào danh sách các phần
-    number_new = message.count('\n') + 1
+    number_new = message.count('\n') - 1
     parts.append(f">> {number_new} domain <<")
     return parts
 

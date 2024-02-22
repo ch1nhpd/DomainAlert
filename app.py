@@ -91,12 +91,10 @@ def checkStatus():
     pass
 
 def main():
-    domain = 'bizflycloud.vn'
-    # filter(f"{domain}.csv",f"subfinder.{domain}.csv")
-    tool(domain)
+    with open(f"listdomain.txt", 'r') as file:
+        listdomain = file.read()
+    domains = listdomain.split('\n')
+    for domain in domains:
+        tool(domain)
 
 main()
-# domain = 'bizflycloud.vn'
-# with open(f"data/{domain}.csv", 'r') as file:
-#     old_content = file.read()
-# alertNew(old_content)
