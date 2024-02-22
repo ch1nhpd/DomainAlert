@@ -1,6 +1,8 @@
 import pandas as pd
 import subprocess
-import echo_bot
+import telebot
+
+bot = telebot.TeleBot("6184106582:AAHTB8QDH1r2GMAQVIa_2pa88oJd33hWBSE")
 
 def subfinder(domain):
     command = f"subfinder -active -all -d {domain} -ip > tmp_data/subfinder.{domain}.csv"
@@ -47,8 +49,6 @@ def filter(oldFile='file1.csv',newFile='file2.csv'): # lọc kết quả xem có
     merged_df.to_csv(oldFile, index=False,mode="w")
     if new_subdomain != '':
         alertNew(new_subdomain)
-        number_new = new_subdomain.count('\n')
-        alertNew(f"Phát hiện {number_new} new domain")
     
     # print(new_subdomain)
 def split_long_message(message, max_length):
@@ -68,6 +68,8 @@ def split_long_message(message, max_length):
             current_part = line  # Bắt đầu một phần mới
 
     parts.append(current_part)  # Lưu phần cuối cùng vào danh sách các phần
+    number_new = message.count('\n') + 1
+    parts.append(f">> {number_new} domain <<")
     return parts
 
 def alertNew(message,chat_id='-4069733583'):
@@ -76,9 +78,9 @@ def alertNew(message,chat_id='-4069733583'):
     for part in message_parts:
         try:
         # Lệnh gửi tin nhắn
-            echo_bot.bot.send_message(chat_id=chat_id, text=part)
+            bot.send_message(chat_id=chat_id, text=part)
         except Exception as e:
-            echo_bot.bot.send_message(chat_id=chat_id, text=e)
+            bot.send_message(chat_id=chat_id, text=e)
     
 
 def alertSub():
