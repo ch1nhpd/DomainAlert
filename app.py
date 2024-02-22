@@ -3,20 +3,20 @@ import subprocess
 import echo_bot
 
 def subfinder(domain):
-    command = f"subfinder -active -all -d {domain} -ip > subfinder.{domain}.csv"
+    command = f"subfinder -active -all -d {domain} -ip > tmp_data/subfinder.{domain}.csv"
     # Chạy lệnh nhưng không hiển thị kết quả trực tiếp trên terminal
     process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     print(f"Running: {command}...")
     stdout, stderr = process.communicate()
 
-    new_line = "subdomain,ip,source\n"
-    with open(f"subfinder.{domain}.csv", 'r') as file:
+    new_line = "Domain,IP,Status\n"
+    with open(f"tmp_data/subfinder.{domain}.csv", 'r') as file:
         old_content = file.read()
-    if not old_content.startswith("subdomain,ip,source"):   
-        with open(f"subfinder.{domain}.csv", 'w') as file:
+    if not old_content.startswith("Domain,IP,Status"):   
+        with open(f"tmp_data/subfinder.{domain}.csv", 'w') as file:
             file.write(new_line + old_content)
 
-    filter(f"{domain}.csv",f"subfinder.{domain}.csv")
+    filter(f"data/{domain}.csv",f"tmp_data/subfinder.{domain}.csv")
 
 def tool(domain='bizflycloud.vn'): # tổng hợp từ một số tool -> chạy đa luồng, mỗi luồng một tool
     subfinder(domain)
@@ -47,10 +47,37 @@ def filter(oldFile='file1.csv',newFile='file2.csv'): # lọc kết quả xem có
     merged_df.to_csv(oldFile, index=False,mode="w")
     if new_subdomain != '':
         alertNew(new_subdomain)
+    
     # print(new_subdomain)
+def split_long_message(message, max_length):
+    """
+    Chia tin nhắn thành các phần có độ dài tối đa và giữ nguyên các dòng
+    """
+    parts = []
+    current_part = ""
+
+    for line in message.split('\n'):
+        if len(current_part) + len(line) + 1 <= max_length:  # Kiểm tra độ dài của phần hiện tại và dòng mới
+            if current_part:  # Kiểm tra xem phần hiện tại có rỗng không
+                current_part += '\n'  # Thêm dấu xuống dòng nếu phần hiện tại không rỗng
+            current_part += line  # Thêm dòng vào phần hiện tại
+        else:
+            parts.append(current_part)  # Lưu phần hiện tại vào danh sách các phần
+            current_part = line  # Bắt đầu một phần mới
+
+    parts.append(current_part)  # Lưu phần cuối cùng vào danh sách các phần
+    return parts
 
 def alertNew(message,chat_id='-4069733583'):
-    echo_bot.bot.send_message(chat_id=chat_id, text=message)
+    max_length = 4096
+    message_parts = split_long_message(message, max_length)
+    for part in message_parts:
+        try:
+        # Lệnh gửi tin nhắn
+            echo_bot.bot.send_message(chat_id=chat_id, text=part)
+        except Exception as e:
+            echo_bot.bot.send_message(chat_id=chat_id, text=e)
+    
 
 def alertSub():
     pass
@@ -65,3 +92,7 @@ def main():
     tool(domain)
 
 main()
+# domain = 'bizflycloud.vn'
+# with open(f"data/{domain}.csv", 'r') as file:
+#     old_content = file.read()
+# alertNew(old_content)

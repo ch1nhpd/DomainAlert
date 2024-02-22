@@ -1,0 +1,13 @@
+Domain,IP,Status
+ns6.synerfy.vn..aiservice.vn,169.62.159.227,Die
+ns7.synerfy.vn..aiservice.vn,123.30.51.247,Die
+ns8.synerfy.vn..aiservice.vn,210.245.87.125,Die
+beta.nspapi.aiservice.vn,222.255.27.27,503
+newstesting.aiservice.vn,222.255.27.27,404
+boxpr.aiservice.vn,123.30.151.80,200
+recsys.aiservice.vn,123.30.151.81,503
+snews.aiservice.vn,123.30.151.81,404
+pega.aiservice.vn,123.30.151.79,404
+speech.aiservice.vn,123.30.151.80,200
+video.aiservice.vn,123.30.151.80,503
+rec.aiservice.vn,14.225.10.11,503
