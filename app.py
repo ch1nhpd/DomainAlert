@@ -47,6 +47,8 @@ def filter(oldFile='file1.csv',newFile='file2.csv'): # lọc kết quả xem có
     merged_df.to_csv(oldFile, index=False,mode="w")
     if new_subdomain != '':
         alertNew(new_subdomain)
+        number_new = new_subdomain.count('\n')
+        alertNew(f"Phát hiện {number_new} new domain")
     
     # print(new_subdomain)
 def split_long_message(message, max_length):
