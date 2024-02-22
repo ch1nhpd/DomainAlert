@@ -1,0 +1,15 @@
+amass (Go >= 1.20) : enum -w Wordlist_for_dns_bruteforce
+Sublist3r
+assetfinder
+Subfinder  -active -all -d (-recursive  thì lại ra ít hơn)
+subrute
+Knock
+
+
+https://crt.sh/
+https://censys.io/,
+https://developers.facebook.com/tools/ct/
+VirusTotal Passive DNS replication5
+DNSDumpster
+Netcraft - Search DNS
+https://www.virustotal.com/gui/domain/indrive.com/relations
