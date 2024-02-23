@@ -23,7 +23,7 @@ def split_long_message(message, max_length):
     parts.append(f">> {number_new} domain <<")
     return parts
 
-def alert(message,chat_id='-4069733583'):
+def alert(message,chat_id='-4143361119'):
     max_length = 4096
     message_parts = split_long_message(message, max_length)
     for part in message_parts:

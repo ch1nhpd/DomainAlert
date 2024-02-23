@@ -1,6 +1,7 @@
 import pandas as pd
 import subprocess
 import telebot
+import time
 
 bot = telebot.TeleBot("6184106582:AAHTB8QDH1r2GMAQVIa_2pa88oJd33hWBSE")
 
@@ -72,7 +73,7 @@ def split_long_message(message, max_length):
     parts.append(f">> {number_new} domain <<")
     return parts
 
-def alertNew(message,chat_id='-4069733583'):
+def alertNew(message,chat_id='-4143361119'):
     max_length = 4096
     message_parts = split_long_message(message, max_length)
     for part in message_parts:
@@ -97,4 +98,11 @@ def main():
     for domain in domains:
         tool(domain)
 
-main()
+while True:
+    try:
+        bot.send_message(chat_id="1390642320", text="Looop")
+    except Exception as e:
+        pass
+    main()
+    time.sleep(3600) 
+
