@@ -3,11 +3,13 @@ ns6.synerfy.vn..rongbay.com,169.62.159.227,Die
 ns7.synerfy.vn..rongbay.com,123.30.51.247,Die
 ns8.synerfy.vn..rongbay.com,210.245.87.125,Die
 service.rongbay.com,45.124.92.33,403
-touch.rongbay.com,45.124.92.33,200
-www.touch.rongbay.com,45.124.92.33,200
-demo.rongbay.com,103.69.195.250,200
 bds.rongbay.com,45.124.92.33,200
 www.bds.rongbay.com,45.124.92.33,200
 crawl.rongbay.com,103.69.195.33,502
 crawltool.rongbay.com,45.124.92.33,200
-cron.rongbay.com,45.124.92.33,200
+www.touch.rongbay.com,45.124.92.33,leakix
+cron.rongbay.com,45.124.92.33,leakix
+demo.rongbay.com,103.69.195.250,leakix
+mail.rongbay.com,64.233.170.121,rapiddns
+touch.rongbay.com,45.124.92.33,leakix
+www.rongbay.com,123.30.242.70,leakix

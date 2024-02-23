@@ -2,6 +2,8 @@ Domain,IP,Status
 ns6.synerfy.vn..phunuvietnam.vn,169.62.159.227,Die
 ns7.synerfy.vn..phunuvietnam.vn,123.30.51.247,Die
 ns8.synerfy.vn..phunuvietnam.vn,210.245.87.125,Die
-mail.phunuvietnam.vn,210.245.86.61,200
-hoadatviet.phunuvietnam.vn,123.30.151.125,200
 suno.phunuvietnam.vn,123.30.151.125,503
+hoadatviet.phunuvietnam.vn,123.30.151.125,alienvault
+www.phunuvietnam.vn,14.225.10.18,alienvault
+mail.phunuvietnam.vn,210.245.86.61,rapiddns
+s.phunuvietnam.vn,123.30.151.125,alienvault
