@@ -54,6 +54,7 @@ def handle_subdomain(message):
 
 @bot.message_handler(func=lambda message: True)
 def echo_all(message):
-        bot.reply_to(message, message.text)
+    sender_id = message.from_user.id
+    bot.reply_to(message, f"Hello, Your user ID is: {sender_id}")
 
 bot.infinity_polling()

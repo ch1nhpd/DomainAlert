@@ -95,14 +95,17 @@ def main():
     with open(f"listdomain.txt", 'r') as file:
         listdomain = file.read()
     domains = listdomain.split('\n')
-    for domain in domains:
-        tool(domain)
-
-while True:
     try:
-        bot.send_message(chat_id="1390642320", text="Looop")
+        bot.send_message(chat_id="1390642320", text=f"Count domain = {len(domains)}")
     except Exception as e:
         pass
-    main()
-    time.sleep(3600) 
+    for domain in domains:
+        tool(domain)
+    try:
+        bot.send_message(chat_id="1390642320", text="End main")
+    except Exception as e:
+        pass
+    time.sleep(3600)
 
+while True:
+    main()
