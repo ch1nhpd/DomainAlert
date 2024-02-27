@@ -1,5 +1,5 @@
 import telebot
-import alert_bot as albot
+from controler import tool
 
 bot = telebot.TeleBot("6184106582:AAHTB8QDH1r2GMAQVIa_2pa88oJd33hWBSE")
 
@@ -55,7 +55,7 @@ def handle_subdomain(message):
 
     except FileNotFoundError:
         if isAuthor(message):
-            albot.tool(subdomain,type=0)
+            tool(subdomain,type=0)
             with open("tmp_data/subfinder.{subdomain}.csv", 'r') as file:
                 content = file.read()
             alert(content,"1390642320")
