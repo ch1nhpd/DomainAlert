@@ -3,7 +3,7 @@ from controler import tool
 
 bot = telebot.TeleBot("6184106582:AAHTB8QDH1r2GMAQVIa_2pa88oJd33hWBSE")
 
-def isAuthor(message, senderID='1390642320'):
+def isAuthor(message, senderID=1390642320):
     return message.from_user.id == senderID
 
 def split_long_message(message, max_length):
