@@ -60,7 +60,7 @@ def handle_subdomain(message):
             a = tool(subdomain,type=0)
             content = 'done tool'
             try:
-                with open("tmp_data/subfinder.{subdomain}.csv", 'r') as file:
+                with open(f"tmp_data/subfinder.{subdomain}.csv", 'r') as file:
                     content = file.read()
             except Exception as e:
                 content += str(e)
