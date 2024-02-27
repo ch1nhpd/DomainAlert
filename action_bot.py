@@ -29,7 +29,7 @@ def split_long_message(message, max_length):
 
 def alert(message,chat_id='-4143361119'):
     if isAuthor(message):
-        chat_id = '1390642320'
+        chat_id = 1390642320
     max_length = 4096
     message_parts = split_long_message(message, max_length)
     for part in message_parts:
@@ -61,7 +61,7 @@ def handle_subdomain(message):
             content = 'done tool'
             with open("tmp_data/subfinder.{subdomain}.csv", 'r') as file:
                 content = file.read()
-            alert(content,"1390642320")
+            alert(content,1390642320)
         else:
             bot.reply_to(message, "Chưa có dữ liệu")
 
