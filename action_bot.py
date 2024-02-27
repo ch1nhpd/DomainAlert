@@ -1,8 +1,9 @@
 import telebot
+import alert_bot as albot
 
 bot = telebot.TeleBot("6184106582:AAHTB8QDH1r2GMAQVIa_2pa88oJd33hWBSE")
 
-def authenSender(message, senderID='1390642320'):
+def isAuthor(message, senderID='1390642320'):
     return message.from_user.id == senderID
 
 def split_long_message(message, max_length):
@@ -53,7 +54,13 @@ def handle_subdomain(message):
         alert(content)
 
     except FileNotFoundError:
-        bot.reply_to(message, "Chưa có dữ liệu")
+        if isAuthor(message):
+            albot.tool(subdomain,type=0)
+            with open("tmp_data/subfinder.{subdomain}.csv", 'r') as file:
+                content = file.read()
+            alert(content,"1390642320")
+        else:
+            bot.reply_to(message, "Chưa có dữ liệu")
 
 @bot.message_handler(func=lambda message: True)
 def echo_all(message):

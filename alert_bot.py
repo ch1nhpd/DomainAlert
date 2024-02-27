@@ -6,7 +6,7 @@ import time
 bot = telebot.TeleBot("6184106582:AAHTB8QDH1r2GMAQVIa_2pa88oJd33hWBSE")
 
 def subfinder(domain):
-    command = f"subfinder -active -all -d {domain} -ip > tmp_data/subfinder.{domain}.csv"
+    command = f"subfinder -active -all -d {domain} -ip > tmp_data/subfinder.{domain}.csv" # chạy service thì cần đường dẫn tuyệt đối của tool
     # Chạy lệnh nhưng không hiển thị kết quả trực tiếp trên terminal
     process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     print(f"Running: {command}...")
@@ -24,11 +24,15 @@ def subfinder(domain):
         with open(f"tmp_data/subfinder.{domain}.csv", 'w') as file:
             file.write(new_line + old_content)
 
-    filter(f"data/{domain}.csv",f"tmp_data/subfinder.{domain}.csv")
 
-def tool(domain='bizflycloud.vn'): # tổng hợp từ một số tool -> chạy đa luồng, mỗi luồng một tool
+def tool(domain='bizflycloud.vn',type=1): # tổng hợp từ một số tool -> chạy đa luồng, mỗi luồng một tool
+    # chạy tools
     subfinder(domain)
-    # subfinder -active -all -d indrive.com -ip -o subfinder.indrive.csv
+
+    if type == 0:
+        return 0
+    # filter kết quả
+    filter(f"data/{domain}.csv",f"tmp_data/subfinder.{domain}.csv")
 
 def brute(): # brute force theo từ điển 
     pass
