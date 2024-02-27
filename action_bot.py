@@ -1,10 +1,11 @@
 import telebot
 from controler import tool
+import config as cf
 
-bot = telebot.TeleBot("6184106582:AAHTB8QDH1r2GMAQVIa_2pa88oJd33hWBSE")
+bot = telebot.TeleBot(cf.BOT_TOKEN)
 
-def isAuthor(message, senderID=1390642320):
-    return message.from_user.id == senderID
+def isAuthor(message, senderID=cf.AUTHOR_ID):
+    return str(message.from_user.id) == senderID
 
 def split_long_message(message, max_length):
     """
@@ -27,7 +28,7 @@ def split_long_message(message, max_length):
     parts.append(f">> {number_new} domain <<")
     return parts
 
-def alert(message,chat_id='-4143361119'):
+def alert(message,chat_id=cf.GROUP_CHAT_ID):
     with open(f"log.txt", 'w') as f:
         f.write(message)
     max_length = 4096

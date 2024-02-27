@@ -5,7 +5,7 @@ import time
 import config as cf
 from controler import tool
 
-bot = telebot.TeleBot("6184106582:AAHTB8QDH1r2GMAQVIa_2pa88oJd33hWBSE")
+bot = telebot.TeleBot(cf.BOT_TOKEN)
 
 def brute(): # brute force theo từ điển 
     pass
@@ -34,7 +34,7 @@ def split_long_message(message, max_length):
     parts.append(f">> {number_new} domain <<")
     return parts
 
-def alertNew(message,chat_id='-4143361119'):
+def alertNew(message,chat_id=cf.GROUP_CHAT_ID):
     max_length = 4096
     message_parts = split_long_message(message, max_length)
     for part in message_parts:
@@ -57,20 +57,20 @@ def main():
         listdomain = file.read()
     domains = listdomain.split('\n')
     try:
-        bot.send_message(chat_id="1390642320", text=f"Count domain = {len(domains)}")
+        bot.send_message(chat_id=cf.AUTHOR_ID, text=f"Count domain = {len(domains)}")
     except Exception as e:
         pass
-    
+
     for domain in domains:
         new_subdomain = tool(domain)
         if new_subdomain != '' and new_subdomain != 0:
             alertNew(new_subdomain)
 
     try:
-        bot.send_message(chat_id="1390642320", text="End main")
+        bot.send_message(chat_id=cf.AUTHOR_ID, text="End main")
     except Exception as e:
         pass
-    time.sleep(3600)
+    time.sleep(cf.TIME_SLEEP)
 
 while True:
     main()
