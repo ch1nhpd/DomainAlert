@@ -11,6 +11,11 @@ def subfinder(domain):
     process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     print(f"Running: {command}...")
     stdout, stderr = process.communicate()
+    with open(f"debug.txt", 'w') as f:
+        f.write("=== STDOUT ===\n")
+        f.write(stdout.decode("utf-8"))
+        f.write("\n=== STDERR ===\n")
+        f.write(stderr.decode("utf-8"))
 
     new_line = "Domain,IP,Status\n"
     with open(f"tmp_data/subfinder.{domain}.csv", 'r') as file:

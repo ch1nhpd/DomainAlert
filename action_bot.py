@@ -2,6 +2,9 @@ import telebot
 
 bot = telebot.TeleBot("6184106582:AAHTB8QDH1r2GMAQVIa_2pa88oJd33hWBSE")
 
+def authenSender(message, senderID='1390642320'):
+    return message.from_user.id == senderID
+
 def split_long_message(message, max_length):
     """
     Chia tin nhắn thành các phần có độ dài tối đa và giữ nguyên các dòng
