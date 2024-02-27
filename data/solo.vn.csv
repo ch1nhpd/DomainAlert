@@ -2,8 +2,8 @@ Domain,IP,Status
 ns6.synerfy.vn..solo.vn,169.62.159.227,Die
 ns7.synerfy.vn..solo.vn,123.30.51.247,Die
 ns8.synerfy.vn..solo.vn,210.245.87.125,Die
-doithe.solo.vn,45.124.92.33,leakix
-voucher.solo.vn,45.124.92.33,leakix
-m.solo.vn,45.124.92.33,leakix
-www.m.solo.vn,45.124.92.33,rapiddns
-www.solo.vn,45.124.92.33,leakix
+doithe.solo.vn,45.124.92.33,alienvault
+voucher.solo.vn,45.124.92.33,alienvault
+www.solo.vn,45.124.92.33,alienvault
+m.solo.vn,45.124.92.33,alienvault
+www.m.solo.vn,45.124.92.33,alienvault

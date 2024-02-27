@@ -2,7 +2,7 @@ Domain,IP,Status
 ns6.synerfy.vn..trunkpkg.com,169.62.159.227,Die
 ns7.synerfy.vn..trunkpkg.com,123.30.51.247,Die
 ns8.synerfy.vn..trunkpkg.com,210.245.87.125,Die
-static.trunkpkg.com,123.30.151.79,waybackarchive
-trpj.trunkpkg.com,14.225.10.2,waybackarchive
-trpkp.trunkpkg.com,123.30.151.71,waybackarchive
-trunkpkg.com,123.30.151.79,digitorus
+static.trunkpkg.com,123.30.151.79,alienvault
+trunkpkg.com,123.30.151.79,crtsh
+trpkp.trunkpkg.com,123.30.151.71,alienvault
+trpj.trunkpkg.com,123.30.151.71,alienvault

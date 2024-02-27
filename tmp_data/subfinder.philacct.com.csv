@@ -1,1 +1,5 @@
 Domain,IP,Status
+philacct.com,123.30.151.79,crtsh
+static.philacct.com,123.30.151.79,alienvault
+fgp.philacct.com,123.30.151.81,alienvault
+page.philacct.com,123.30.151.71,alienvault

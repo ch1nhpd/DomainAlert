@@ -1,1 +1,1 @@
-SUBFINDER = 'subfinder'
+SUBFINDER = '/root/go/bin/subfinder'
