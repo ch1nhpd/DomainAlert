@@ -28,10 +28,8 @@ def split_long_message(message, max_length):
     return parts
 
 def alert(message,chat_id='-4143361119'):
-    with open(f"log.txt", 'w') as f:
-        f.write(message)
-    if isAuthor(message):
-        chat_id = 1390642320
+    # if isAuthor(message):
+    #     chat_id = 1390642320
     max_length = 4096
     message_parts = split_long_message(message, max_length)
     for part in message_parts:
