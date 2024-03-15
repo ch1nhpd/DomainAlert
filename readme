@@ -9,3 +9,21 @@ BOT_TOKEN =''
 GROUP_CHAT_ID = '-'
 AUTHOR_ID = ''
 TIME_SLEEP = 
+
+# create service
+nano /etc/systemd/system/acbot.service
+## content
+[Unit]
+Description=Service for action bot tele
+
+[Service]
+ExecStart=/bin/bash -c 'cd /root/tools/DomainAlert/ && /usr/bin/python3 action_bot.py'
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
+## run
+systemctl start acbot.service
+systemctl enable acbot.service
+systemctl start/stop/restart/status acbot.service

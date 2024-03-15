@@ -3,6 +3,9 @@ import subprocess
 import config as cf
 import pandas as pd
 
+def extract_first_column_to_txt(dataframe, output_file):
+    first_column_values = dataframe.iloc[1:, 0]  # Lấy giá trị cột đầu tiên từ dòng thứ hai trở đi
+    first_column_values.to_csv(output_file, index=False, header=False)
 
 def filter(oldFile='file1.csv',newFile='file2.csv'): # lọc kết quả xem có trùng với cái cũ không
 # lưu vào file csv: subdomain, ip, status, dayDiscover, lastUpdate. Tên file là domain chính, 
@@ -21,6 +24,7 @@ def filter(oldFile='file1.csv',newFile='file2.csv'): # lọc kết quả xem có
 
     new_subdomain = '\n'.join(diff_df.apply(lambda row: f"{row[df2.columns[0]]} [{row[df2.columns[1]]}]", axis=1).values)
     merged_df.to_csv(oldFile, index=False,mode="w")
+    extract_first_column_to_txt(merged_df,oldFile.replace("data/", "data_txt/").replace(".csv", ".txt"))
     return new_subdomain
     # if new_subdomain != '':
     #     alertNew(new_subdomain)
