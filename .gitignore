@@ -2,3 +2,6 @@ config.py
 listdomain.txt
 debug.txt
 log.txt
+tmp_data/
+data/
+data_txt/
