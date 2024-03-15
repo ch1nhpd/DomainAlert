@@ -1,9 +1,9 @@
 Domain,IP,Status
-m.gamek.vn,123.30.151.104,digitorus
+gamek.vn,14.225.199.136,digitorus
+m.gamek.vn,14.225.10.24,digitorus
+s.gamek.vn,123.30.151.104,alienvault
+ul.gamek.vn,151.101.1.195,alienvault
 hoso.gamek.vn,123.30.151.104,alienvault
-ul.gamek.vn,151.101.65.195,alienvault
 www.gamek.vn,222.255.27.179,rapiddns
-mail.gamek.vn,172.217.24.83,rapiddns
-gamek.vn,123.30.53.24,digitorus
 app.gamek.vn,123.30.151.74,rapiddns
-s.gamek.vn,14.225.10.24,alienvault
+mail.gamek.vn,142.251.12.121,rapiddns

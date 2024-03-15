@@ -1,6 +1,6 @@
 Domain,IP,Status
-chamnhuan.phunuvietnam.vn,103.107.181.56,leakix
-s.phunuvietnam.vn,123.30.151.125,alienvault
-www.phunuvietnam.vn,14.225.10.18,alienvault
+www.phunuvietnam.vn,14.225.10.18,leakix
+s.phunuvietnam.vn,123.30.151.125,leakix
 mail.phunuvietnam.vn,210.245.86.61,rapiddns
-hoadatviet.phunuvietnam.vn,123.30.151.125,alienvault
+chamnhuan.phunuvietnam.vn,103.107.181.56,leakix
+hoadatviet.phunuvietnam.vn,123.30.151.125,leakix

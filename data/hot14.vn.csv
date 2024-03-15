@@ -2,10 +2,10 @@ Domain,IP,Status
 ns6.synerfy.vn..hot14.vn,169.62.159.227,Die
 ns7.synerfy.vn..hot14.vn,123.30.51.247,Die
 ns8.synerfy.vn..hot14.vn,210.245.87.125,Die
-log.hot14.vn,123.30.151.121,digitorus
-api.hot14.vn,123.30.151.121,digitorus
-embed.hot14.vn,123.30.151.121,digitorus
-search.hot14.vn,123.30.151.121,digitorus
+log.hot14.vn,123.30.151.121,leakix
+search.hot14.vn,123.30.151.121,waybackarchive
 www.hot14.vn,123.30.151.121,leakix
-haihit.hot14.vn,123.30.151.121,digitorus
-sig3.hot14.vn,123.30.151.121,digitorus
+api.hot14.vn,123.30.151.121,waybackarchive
+embed.hot14.vn,123.30.151.121,waybackarchive
+sig3.hot14.vn,123.30.151.121,waybackarchive
+haihit.hot14.vn,123.30.151.121,leakix

@@ -1,9 +1,9 @@
 Domain,IP,Status
-www.enbac.com,123.30.242.70,alienvault
-service.enbac.com,45.124.92.33,rapiddns
-mail.enbac.com,172.217.27.51,rapiddns
-www.m.enbac.com,45.124.92.33,alienvault
-m.enbac.com,45.124.92.33,digitorus
-oto.enbac.com,45.124.92.33,digitorus
-blog.enbac.com,45.124.92.33,digitorus
 www.oto.enbac.com,45.124.92.33,alienvault
+www.m.enbac.com,45.124.92.33,alienvault
+service.enbac.com,45.124.92.33,rapiddns
+m.enbac.com,45.124.92.33,leakix
+mail.enbac.com,142.250.66.147,rapiddns
+blog.enbac.com,45.124.92.33,leakix
+www.enbac.com,123.30.242.70,leakix
+oto.enbac.com,45.124.92.33,leakix

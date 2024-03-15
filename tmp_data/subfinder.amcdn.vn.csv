@@ -1,4 +1,4 @@
 Domain,IP,Status
-static.amcdn.vn,123.30.151.79,digitorus
-loghu.amcdn.vn,123.30.151.81,leakix
-amcdn.vn,123.30.151.79,digitorus
+loghu.amcdn.vn,123.30.151.81,alienvault
+static.amcdn.vn,123.30.151.79,alienvault
+amcdn.vn,123.30.151.79,crtsh

@@ -1,13 +1,7 @@
 Domain,IP,Status
-v2.sohacorp.vn,222.255.27.88,waybackarchive
 update.sohacorp.vn,222.255.27.165,alienvault
-sohaplay.sohacorp.vn,222.255.27.88,alienvault
-sdk2mysoha.sohacorp.vn,222.255.27.88,waybackarchive
-m.sohacorp.vn,222.255.27.165,waybackarchive
-api.sohacorp.vn,222.255.27.165,waybackarchive
-sohasdk.sohacorp.vn,222.255.27.165,waybackarchive
 sohacorp.vn,222.255.27.165,digitorus
-mobile.sohacorp.vn,222.255.27.165,waybackarchive
-cloud.sohacorp.vn,222.255.27.165,waybackarchive
-admin2.sohacorp.vn,10.5.44.185,waybackarchive
+sohaplay.sohacorp.vn,222.255.27.88,alienvault
+sdk2mysoha.sohacorp.vn,222.255.27.88,rapiddns
+cloud.sohacorp.vn,222.255.27.165,rapiddns
 git.sohacorp.vn,222.255.27.88,rapiddns
