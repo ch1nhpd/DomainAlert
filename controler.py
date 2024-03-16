@@ -37,6 +37,7 @@ def subfinder(domain):
     # Chạy lệnh nhưng không hiển thị kết quả trực tiếp trên terminal
     process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     print(f"Running: {command}...")
+    process.wait()
     stdout, stderr = process.communicate()
     with open(f"debug.txt", 'w') as f:
         f.write("=== STDOUT ===\n")
