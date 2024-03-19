@@ -10,6 +10,8 @@ GROUP_CHAT_ID = '-'
 AUTHOR_ID = ''
 TIME_SLEEP = 
 
+#listdomain.txt
+
 # create service
 nano /etc/systemd/system/acbot.service
 ## content
