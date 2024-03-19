@@ -4,6 +4,11 @@ import config as cf
 
 bot = telebot.TeleBot(cf.BOT_TOKEN)
 
+man = """
+/subdomain bizflycloud.vn : echo subdomain,ip,status
+/txt bizflycloud.vn : echo only subdomain
+"""
+
 def isAuthor(message, senderID=cf.AUTHOR_ID):
     return str(message.from_user.id) == senderID
 
@@ -43,7 +48,7 @@ def alert(message,chat_id=cf.GROUP_CHAT_ID):
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
-        bot.reply_to(message, "Howdy, how are you doing?")
+        bot.reply_to(message, man)
 
 @bot.message_handler(commands=['subdomain'])
 def handle_subdomain(message):
@@ -69,11 +74,35 @@ def handle_subdomain(message):
         else:
             bot.reply_to(message, "Chưa có dữ liệu")
 
+@bot.message_handler(commands=['txt'])
+def handle_txtsubdomain(message):
+    # Tách lệnh và tham số từ tin nhắn
+    command, subdomain = message.text.split(maxsplit=1)
+    filename = 'data_txt/'+ subdomain + '.txt'
+    try:
+        # Đọc nội dung từ file test.abc.com
+        with open(filename, 'r') as file:
+            content = file.read()
+        alert(content)
+
+    except FileNotFoundError:
+        if isAuthor(message):
+            a = tool(subdomain,type=0)
+            content = 'done tool'
+            try:
+                with open(f"tmp_data/subfinder.{subdomain}.csv", 'r') as file:
+                    content = file.read()
+            except Exception as e:
+                content += str(e)
+            alert(content,1390642320)
+        else:
+            bot.reply_to(message, "Chưa có dữ liệu")
+
 @bot.message_handler(func=lambda message: True)
 def echo_all(message):
     sender_id = message.from_user.id
     if isAuthor(message):
-        bot.reply_to(message, f"Hello, Your user ID is: {sender_id}")
+        bot.reply_to(message, f"Hello")
     else:
         bot.reply_to(message, message.text)
 

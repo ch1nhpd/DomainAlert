@@ -57,7 +57,7 @@ def main():
         listdomain = file.read()
     domains = listdomain.split('\n')
     try:
-        bot.send_message(chat_id=cf.AUTHOR_ID, text=f"Count domain = {len(domains)}")
+        bot.send_message(chat_id=cf.AUTHOR_ID, text=f"Restart {len(domains)} domains")
     except Exception as e:
         pass
 
@@ -70,7 +70,7 @@ def main():
         bot.send_message(chat_id=cf.AUTHOR_ID, text="End main")
     except Exception as e:
         pass
-    time.sleep(cf.TIME_SLEEP)
+    # time.sleep(cf.TIME_SLEEP)
 
 while True:
     main()
