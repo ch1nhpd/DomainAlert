@@ -57,7 +57,7 @@ def tool(domain='bizflycloud.vn',type=1): # tổng hợp từ một số tool ->
     subfinder(domain)
 
     if type == 0:
-        return 0
+        return ''
     # filter kết quả
     new_subdomain = filter(f"data/{domain}.csv",f"tmp_data/subfinder.{domain}.csv")
     return new_subdomain

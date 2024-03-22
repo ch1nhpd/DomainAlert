@@ -73,4 +73,7 @@ def main():
     # time.sleep(cf.TIME_SLEEP)
 
 while True:
-    main()
+    try:
+        main()
+    except Exception as e:
+        bot.send_message(chat_id=cf.AUTHOR_ID, text=e)
