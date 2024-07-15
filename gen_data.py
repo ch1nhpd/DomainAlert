@@ -20,4 +20,6 @@ for domain_name in domain_names:
         with open(file_path, "w") as csv_file:
             csv_file.write("Domain,IP,Status\n")
             csv_file.write(domain_name+",1.1.1.1,origin\n")
+        # tạo luôn file txt
+        open(folder_path+"_txt/"+domain_name+".txt", 'w').close()
 
