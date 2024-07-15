@@ -5,6 +5,7 @@ go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
 
 # config.py
 SUBFINDER = '/root/go/bin/subfinder'
+SUBFINDER_OPTION = '-active -all -ip'
 BOT_TOKEN =''
 GROUP_CHAT_ID = '-'
 AUTHOR_ID = ''

@@ -60,14 +60,15 @@ def main():
         bot.send_message(chat_id=cf.AUTHOR_ID, text=f"Restart {len(domains)} domains")
     except Exception as e:
         pass
-
+    domain_checked = 0
     for domain in domains:
         new_subdomain = tool(domain)
+        domain_checked += 1
         if new_subdomain != '' and new_subdomain != 0:
             alertNew(new_subdomain)
 
     try:
-        bot.send_message(chat_id=cf.AUTHOR_ID, text="End main")
+        bot.send_message(chat_id=cf.AUTHOR_ID, text="End main, domain checked: " + str(domain_checked))
     except Exception as e:
         pass
     # time.sleep(cf.TIME_SLEEP)

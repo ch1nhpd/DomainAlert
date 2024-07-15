@@ -33,7 +33,7 @@ def filter(oldFile='file1.csv',newFile='file2.csv'): # lọc kết quả xem có
 
 
 def subfinder(domain):
-    command = f"{cf.SUBFINDER} -active -all -d {domain} -ip > tmp_data/subfinder.{domain}.csv" # chạy service thì cần đường dẫn tuyệt đối của tool
+    command = f"{cf.SUBFINDER} -d {domain} {cf.SUBFINDER_OPTION} > tmp_data/subfinder.{domain}.csv" # chạy service thì cần đường dẫn tuyệt đối của tool
     # Chạy lệnh nhưng không hiển thị kết quả trực tiếp trên terminal
     process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     print(f"Running: {command}...")
