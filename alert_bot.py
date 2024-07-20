@@ -43,6 +43,7 @@ def alertNew(message,chat_id=cf.GROUP_CHAT_ID):
             bot.send_message(chat_id=chat_id, text=part)
         except Exception as e:
             bot.send_message(chat_id=chat_id, text=e)
+        time.sleep(1)
     
 
 def alertSub():
