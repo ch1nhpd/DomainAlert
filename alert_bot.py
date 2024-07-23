@@ -38,12 +38,12 @@ def alertNew(message,chat_id=cf.GROUP_CHAT_ID):
     max_length = 4096
     message_parts = split_long_message(message, max_length)
     for part in message_parts:
+        time.sleep(1)
         try:
         # Lệnh gửi tin nhắn
             bot.send_message(chat_id=chat_id, text=part)
         except Exception as e:
             bot.send_message(chat_id=chat_id, text=e)
-        time.sleep(1)
     
 
 def alertSub():
@@ -72,7 +72,7 @@ def main():
         bot.send_message(chat_id=cf.AUTHOR_ID, text="End main, domain checked: " + str(domain_checked))
     except Exception as e:
         pass
-    # time.sleep(cf.TIME_SLEEP)
+    time.sleep(cf.TIME_SLEEP)
 
 while True:
     try:
