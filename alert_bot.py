@@ -38,7 +38,7 @@ def alertNew(message,chat_id=cf.GROUP_CHAT_ID):
     max_length = 4096
     message_parts = split_long_message(message, max_length)
     for part in message_parts:
-        time.sleep(1)
+        time.sleep(cf.TIME_DELAY_TELE)
         try:
         # Lệnh gửi tin nhắn
             bot.send_message(chat_id=chat_id, text=part)
